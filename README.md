@@ -1,2 +1,3 @@
 # SubZer0_Extension
-Update README.md
+cd ~/projects/SubZer0_Extension
+
