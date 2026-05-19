@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SubZer0</title>
+    <style>
+      body {
+        width: 360px;
+        margin: 0;
+        background: #0d1117;
+        color: #f0f6fc;
+        font: 13px Arial, sans-serif;
+      }
+
+      .dashboard {
+        padding: 12px;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      h3 {
+        margin: 12px 0 8px;
+        color: #8cc8ff;
+        font-size: 13px;
+      }
+
+      .tool-group {
+        border-top: 1px solid #263241;
+        padding-top: 8px;
+      }
+
+      .input-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+
+      input, select, button {
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid #303d4f;
+        padding: 7px;
+        font: inherit;
+      }
+
+      input, select {
+        background: #161b22;
+        color: #f0f6fc;
+      }
+
+      button {
+        margin: 3px 0;
+        background: #1f6feb;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+      }
+
+      button.secondary {
+        background: #30363d;
+      }
+
+      button.danger {
+        background: #b42318;
+      }
+
+      button.success {
+        background: #238636;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 6px 0;
+      }
+
+      label input[type="checkbox"] {
+        width: auto;
+      }
+
+      #status {
+        min-height: 18px;
+        margin-top: 8px;
+        color: #8cffb0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <h2>SubZer0 Main</h2>
+
+      <section class="tool-group">
+        <h3>Core</h3>
+        <button id="freezeBtn" class="danger">Freeze + Lock</button>
+        <button id="unfreezeBtn" class="secondary">Unfreeze</button>
+        <button id="liveEditBtn">Live HTML Editor</button>
+        <button id="successBtn" class="success">Success - Reload Fresh</button>
+      </section>
+
+      <section class="tool-group">
+        <h3>Search / Replace</h3>
+        <div class="input-row">
+          <input type="text" id="searchTerm" placeholder="Search">
+          <input type="text" id="replaceTerm" placeholder="Replace">
+        </div>
+        <select id="scope">
+          <option value="everything">Everything in DOM</option>
+          <option value="textOnly">Text only</option>
+          <option value="fullHtml">Full document HTML</option>
+        </select>
+        <label><input type="checkbox" id="visibleOnly"> Visible only</label>
+        <label><input type="checkbox" id="smart" checked> Smart similar</label>
+        <label><input type="checkbox" id="includeCode"> Include script/style/template text</label>
+        <label><input type="checkbox" id="backendSmart"> Ask local backend for smarter matching</label>
+        <button id="searchReplaceBtn">Run Search/Replace</button>
+        <button id="agentReplaceBtn" class="secondary">Run Smart Replace Agent</button>
+      </section>
+
+      <section class="tool-group">
+        <h3>Helpers</h3>
+        <button id="highlightBtn">Highlight Digits</button>
+        <button id="freezeAgentBtn" class="secondary">Run Freeze Guardian Agent</button>
+        <button id="undoBtn" class="secondary">Undo Last Page Edit</button>
+      </section>
+
+      <section class="tool-group">
+        <h3>Backend</h3>
+        <input id="backendUrl" placeholder="http://127.0.0.1:8787">
+      </section>
+
+      <div id="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
