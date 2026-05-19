@@ -1,4 +1,36 @@
 # SubZer0_Extension
+# SubZer0 Agents
+
+SubZer0 is the main extension. Agents are optional helper scripts injected by `background.js` when the popup asks for them.
+
+An agent file should call:
+
+```js
+window.__SUBZER0_MAIN__.registerAgent({
+  id: 'my-agent',
+  name: 'My Agent',
+  description: 'What it helps with',
+  async run(payload, api) {
+    return api.status('Agent ran');
+  }
+});
+```
+
+Available safe API methods:
+
+- `api.searchReplace(payload)`
+- `api.freeze({ lock: true })`
+- `api.unfreeze()`
+- `api.highlightDigits()`
+- `api.openLiveEditor()`
+- `api.undo()`
+- `api.successReload()`
+- `api.captureSnapshot()`
+- `api.restoreSnapshot(snapshot)`
+- `api.withSubZer0Mutation(fn)`
+- `api.status(message, detail)`
+
+Register new agent files in `background.js` under `AGENT_FILES`.
 
 A Chrome extension project built by Tukaha.
 
