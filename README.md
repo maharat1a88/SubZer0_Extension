@@ -34,6 +34,18 @@ You can preview markdown directly in VS Code too:
 - It shows the formatted view side‑by‑side
 
 ---
+# SubZer0_Extension
+A Chrome extension project built by Tukaha.
+
+## Installation
+git clone git@github.com:maharat1a88/SubZer0_Extension.git
+cd SubZer0_Extension
+
+## Features
+- Custom popup interface
+- Background script for automation
+- Manifest v3 support
+
 
 
 
